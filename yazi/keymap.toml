@@ -1,0 +1,17 @@
+# Alt+o: открыть выделенный файл/папку в VS Code
+[[mgr.prepend_keymap]]
+on = ["<A-o>"]
+run = "shell --orphan -- code --new-window %h"
+desc = "Open in VS Code"
+
+# Ctrl+o: запасной вариант (Alt в терминалах часто не доходит)
+[[mgr.prepend_keymap]]
+on = ["<C-o>"]
+run = "shell --orphan -- code --new-window %h"
+desc = "Open in VS Code"
+
+# g o: последовательность клавиш без модификаторов
+[[mgr.prepend_keymap]]
+on = ["g", "o"]
+run = "shell --orphan -- code --new-window %h"
+desc = "Open in VS Code"
