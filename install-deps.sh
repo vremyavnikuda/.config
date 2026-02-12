@@ -65,6 +65,7 @@ AUR_PACKAGES=(
   yandex-browser
   thorium-browser
   tofi
+  wezterm-git
   jome
 )
 
