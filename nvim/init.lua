@@ -326,6 +326,26 @@ require("lazy").setup({
     end,
   },
   {
+    "shellRaining/hlchunk.nvim",
+    lazy = false,
+    config = function()
+      require("hlchunk").setup({
+        chunk = {
+          enable = true,
+          use_treesitter = false,
+          notify = true,
+          style = {
+            { fg = "#e6c384" },
+            { fg = "#e82424" },
+          },
+        },
+        indent = { enable = false },
+        line_num = { enable = false },
+        blank = { enable = false },
+      })
+    end,
+  },
+  {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup({})
@@ -388,6 +408,12 @@ require("lazy").setup({
     config = function()
       require("neogit").setup({})
     end,
+  },
+  {
+    "aikhe/wrapped.nvim",
+    dependencies = { "nvzone/volt", "nvim-lua/plenary.nvim" },
+    cmd = { "NvimWrapped" },
+    opts = {},
   },
   {
     "hrsh7th/nvim-cmp",
@@ -466,7 +492,7 @@ map("n", "<leader>sr", "<cmd>Telescope lsp_references<cr>", { desc = "Find refer
 map("n", "<leader>sd", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document symbols" })
 map("n", "<leader>sw", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "Workspace symbols" })
 map("n", "<leader>si", "<cmd>Telescope lsp_implementations<cr>", { desc = "Find implementations" })
-map("n", "<leader>sd", "<cmd>Telescope lsp_definitions<cr>", { desc = "Find definitions" })
+map("n", "<leader>sD", "<cmd>Telescope lsp_definitions<cr>", { desc = "Find definitions" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<cr>", { desc = "Focus project tree" })
 map("n", "<leader>E", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle project tree" })
 
@@ -530,6 +556,7 @@ end, { desc = "Format buffer" })
 map("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next git hunk" })
 map("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Prev git hunk" })
 map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
+map("n", "<leader>nw", "<cmd>NvimWrapped<cr>", { desc = "Nvim Wrapped" })
 
 -- Inlay hints toggle with debug info
 map("n", "<leader>ih", function()
