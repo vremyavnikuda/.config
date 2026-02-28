@@ -12,10 +12,6 @@ config.font_rules = {
     italic = true,
     font = wezterm.font { family = 'Cascadia Code', italic = true },
   },
-  {
-    intensity = 'Bold',
-    font = wezterm.font { family = 'Cascadia Code', bold = true },
-  },
 }
 config.initial_cols = 120
 config.initial_rows = 30
